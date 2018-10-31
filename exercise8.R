@@ -28,19 +28,20 @@ a+geom_line(aes(group=team, color=team))+xlab("Minutes")+ylab("Score")
 # Question 2
 
 
-game=function(number){
+game=function(){
   n=sample(1:100,1)
-  guess=readline(prompt=" Guess a number")
-  if(guess > n){
+  guess=readline(prompt="Guess a number: ")
+  while (guess!= n) {
+    if(guess > n){
     print("Lower")
-  } else if(guess = n) {
-    print("Correct!")
-  } else {
+    guess=readline(prompt="Guess again: ")
+  }else{
     print("Higher")
+    guess=readline(prompt="Guess again: ")
   }
-    
+  } 
+  print("Correct!")
 }
-  
 #ask user to make guess
 #while guess != random number
 #if/else 
